@@ -1,0 +1,13 @@
+{
+  "name": "kryvant",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd frontend && pnpm install && cd ../backend && npm install",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:frontend": "cd frontend && pnpm dev",
+    "dev:backend": "cd backend && npm run dev",
+    "setup": "npm run install:all && cd backend && npm run db:generate && npm run db:migrate -- --name init && npm run db:seed",
+    "db:studio": "cd backend && npx prisma studio"
+  }
+}
